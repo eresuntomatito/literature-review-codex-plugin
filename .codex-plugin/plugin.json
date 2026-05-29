@@ -1,0 +1,34 @@
+{
+  "name": "literature-review",
+  "version": "0.1.0",
+  "description": "A closed-evidence literature review assistant for Codex.",
+  "author": {
+    "name": "Luis Aviles"
+  },
+  "license": "MIT",
+  "keywords": [
+    "literature-review",
+    "research",
+    "evidence",
+    "apa",
+    "synthesis"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Literature Review",
+    "shortDescription": "Plan, extract, synthesize, and audit source-grounded literature reviews.",
+    "longDescription": "A Codex plugin for closed-evidence literature reviews using user-provided sources. It helps frame the review, register sources, create matrices, extract evidence, synthesize themes, draft APA-style report chapters, and audit citation traceability.",
+    "developerName": "Luis Aviles",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Run a literature review from my PDFs.",
+      "Create review matrices for this project.",
+      "Audit citations in my review draft."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

@@ -1,0 +1,15 @@
+# Local/generated review evidence and outputs
+00_raw_sources/
+01_process/
+02_deliverables/
+
+# Python/runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
