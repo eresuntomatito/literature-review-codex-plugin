@@ -43,6 +43,20 @@ Those folders are useful during review work, but they should not be distributed 
 
 ## Install From GitHub
 
+This repository supports two install modes.
+
+### Option A: Codex Plugin
+
+Use this when you want the full plugin layout:
+
+```text
+.codex-plugin/plugin.json
+skills/literature-review/SKILL.md
+assets/
+scripts/
+examples/
+```
+
 The recommended sharing model is:
 
 1. Publish this repository to GitHub.
@@ -57,6 +71,24 @@ cd literature-review-codex-plugin
 ```
 
 If your Codex installation uses a local plugin marketplace, point the marketplace entry to this cloned folder or copy the repository into your local plugins directory.
+
+### Option B: Standalone Skill
+
+Use this when you are using the standard Codex skill installer.
+
+Install from the repository root so the skill has access to `assets/` and `scripts/`:
+
+```powershell
+python C:\Users\<you>\.codex\skills\.system\skill-installer\scripts\install-skill.py --repo eresuntomatito/literature-review-codex-plugin
+```
+
+If you install only this subpath, the skill file installs but repository-level assets and scripts are not included:
+
+```powershell
+python C:\Users\<you>\.codex\skills\.system\skill-installer\scripts\install-skill.py --repo eresuntomatito/literature-review-codex-plugin --path skills/literature-review
+```
+
+That subpath install is useful only if you want the instructions without the bundled templates, prompts, schemas, and helper scripts.
 
 ## Usage
 

@@ -9,6 +9,15 @@ This skill helps Codex run a structured literature review from a closed, user-pr
 
 Use it when the user asks for a literature review, source triage, evidence extraction, thematic synthesis, APA-style report drafting, or citation auditing.
 
+## Installation Shape
+
+This repository can be used in two ways:
+
+- As a Codex plugin, through `.codex-plugin/plugin.json` and `skills/literature-review/SKILL.md`.
+- As a standalone skill, by installing this repository root. In that mode, this `SKILL.md` can access the repository-level `assets/` and `scripts/` folders.
+
+Do not install only `skills/literature-review` as a standalone skill if you need templates, prompts, schemas, and helper scripts; that subfolder does not contain those repository-level assets.
+
 ## Core Principle
 
 Only user-provided, ingested sources may be cited as literature evidence.
@@ -17,9 +26,9 @@ General model knowledge may help with workflow, wording, structure, and methodol
 
 If a source is not present in the user's project, ask the user to provide it or label any related statement as outside the current evidence base.
 
-## Plugin Assets
+## Assets
 
-Resolve these paths relative to the plugin root:
+Resolve these paths relative to the repository root when installed as a standalone skill, or relative to the plugin root when enabled as a plugin:
 
 - `assets/templates/`: Review protocols, matrices, source cards, and report templates.
 - `assets/prompts/`: Step-specific prompt patterns.
@@ -27,8 +36,6 @@ Resolve these paths relative to the plugin root:
 - `scripts/`: Helper scripts for source registration, PDF extraction, matrix creation, and citation-ledger validation.
 
 Prefer reusing these assets over inventing new table shapes or workflow stages.
-
-If this repository is installed as a standalone skill instead of a plugin, install from the repository root so `assets/` and `scripts/` are included. Installing only `skills/literature-review` as a standalone skill gives you this skill file but not the shared assets.
 
 ## Target Project Structure
 
@@ -186,7 +193,7 @@ Use `scripts/validate_citation_ledger.py`, `assets/templates/matrices/citation_l
 
 ### 9. Update Project Knowledge
 
-After the review is complete, save compact reusable knowledge inside the target project, not inside the plugin:
+After the review is complete, save compact reusable knowledge inside the target project, not inside the skill or plugin:
 
 - source cards;
 - review run summary;
@@ -222,7 +229,7 @@ Pause for explicit approval when decisions materially shape the review:
 ## Behavior Rules
 
 - Keep review artifacts in the user's current project.
-- Do not write project-specific sources, process traces, or deliverables back into the plugin.
+- Do not write project-specific sources, process traces, or deliverables back into the skill or plugin.
 - Use existing project conventions when they exist.
 - Keep source cards lean; put detailed evidence in the extraction table.
 - Label unsupported content as assumption, working hypothesis, methodological suggestion, or general process guidance.
